@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './RegisterComponent.css'; 
 import PopupModal from '../PopupModal/PopupModal';
-import connectWallet from '../Connectwallet/ConnectWallet';
+// import connectWallet from '../Connectwallet/ConnectWallet';
+import connectWallet from './ConnectWallet/ConnectWallet';
 import getProviderOrSigner from '../../contractInstance';
 import LoadingModal from '../Loading/Loading';
 import PopupDiv from '../PopupDiv/PopupDiv';
