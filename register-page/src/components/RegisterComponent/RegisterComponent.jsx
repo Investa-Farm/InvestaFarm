@@ -6,7 +6,6 @@ import getProviderOrSigner from '../../contractInstance';
 import LoadingModal from '../Loading/Loading';
 import PopupDiv from '../PopupDiv/PopupDiv';
 import DAO from '../DAO/DAO';
-import { ethers } from 'ethers';
 
 const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddress }) => {
   const [showModal, setShowModal] = useState(false);
