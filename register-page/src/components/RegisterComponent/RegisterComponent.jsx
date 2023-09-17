@@ -307,7 +307,7 @@ const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddr
               <button className="register-button" onClick={() => { handleShowModal("REGISTERFARMER", "This is the Register Modal Content"); connectWallet() }}>Register as a farmer</button>
               <button className="register-button" onClick={() => { handleShowModal("REGISTERINVESTOR", "This is the Register Modal Content"); connectWallet() }}>Register as an Investor</button>
               {/* <button onClick={() => { handleLogin(); connectWallet() }}>Login DAO</button> */}
-              <p className='dao-register'>Already registered? <a href='http://localhost:5174/'>Login</a></p>
+              <p className='dao-register'>Already registered? <a href='https://investafarm-marketplace-eth.vercel.app/'>Login</a></p>
             </div>
           </div>
 
