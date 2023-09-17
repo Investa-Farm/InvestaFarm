@@ -1,0 +1,37 @@
+.marketplaceheader-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+.marketplace-div1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.marketplace-div2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.marketplace-div2 p {
+    font-weight: bold;
+    color: #92eb4e;
+}
+
+.marketplace-div2 div {
+    border: 1px solid #ccc;
+    font-weight: bold;
+    color: #92eb4e;
+    margin-left: 1rem;
+    padding: 10px;
+    border-radius: 40%;
+}

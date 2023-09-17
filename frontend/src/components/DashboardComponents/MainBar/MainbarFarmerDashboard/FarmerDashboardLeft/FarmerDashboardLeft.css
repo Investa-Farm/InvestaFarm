@@ -1,0 +1,139 @@
+.farmersdashboardleft-container {
+    /* border: 1px solid #000; */
+    width: 50%;
+    margin-left: 40px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.farmersdashboardleft-image-container {
+   width: 60%;
+   padding: 20px;
+}
+
+.farmersdashboardleft-container div img {
+    width: 125%;
+}
+
+.farmersdashboardleft-container h1 {
+    font-size: 2rem;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    margin-left: 30px;
+}
+
+.farmersdashboardleft-description {
+  width: 400px;
+}
+  
+.farmersdashboardleft-container  p {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 5px;
+    margin-left: 20px;
+    /* text-align: center; */
+}
+
+.farmersdashboardleft-container div:last-child {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.farmersdashboardleft-container a {
+    background-color: #b3e88a;
+    color: #000;
+    border-radius: 30px;
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.farmersdashboardleft-container button:last-child {
+    margin-left: 30px;
+}
+
+  .light-green-spots {
+    width: 60%; /* Same as farmersdashboardleft-image-container */
+    height: 250px;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey background color */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Box shadow styling */
+    display: inline-block;
+    position: relative;
+  }
+  
+  .light-green-spots::before {
+    content: '';
+    position: absolute;
+    width: 4px; /* Adjust the size of the spots */
+    height: 4px; /* Adjust the size of the spots */
+    background-color: #b3e88a; /* Light green color */
+    border-radius: 50%; /* Circular shape */
+  }
+  
+  /* Scatter 20 spots evenly */
+  .light-green-spots::before:nth-child(1) {
+    top: 30%;
+    left: 10%;
+  }
+  
+  .light-green-spots::before:nth-child(2) {
+    top: 10%;
+    left: 20%;
+  }
+  
+  .light-green-spots::before:nth-child(3) {
+    top: 10%;
+    left: 30%;
+  }
+  
+  .light-green-spots::before:nth-child(4) {
+    top: 10%;
+    left: 40%;
+  }
+  
+  .light-green-spots::before:nth-child(5) {
+    top: 10%;
+    left: 50%;
+  }
+  
+  .light-green-spots::before:nth-child(6) {
+    top: 20%;
+    left: 10%;
+  }
+  
+  .light-green-spots::before:nth-child(7) {
+    top: 20%;
+    left: 20%;
+  }
+  
+  .light-green-spots::before:nth-child(8) {
+    top: 20%;
+    left: 30%;
+  }
+  
+  .light-green-spots::before:nth-child(9) {
+    top: 20%;
+    left: 40%;
+  }
+  
+  .light-green-spots::before:nth-child(10) {
+    top: 20%;
+    left: 50%;
+  }
+  
+  /* Continue with similar patterns for all 20 spots */
+  
+  
+
+  

@@ -1,0 +1,15 @@
+/* Add the styles for the TrapezoidalDiv component */
+.trapezoid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68.5vw;
+  height: 100vh;
+  background-color: green;
+  border: 2px solid black;
+  border-right: none; /* Remove the right border to create the trapezoid shape */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0%); /* Create an upside-down triangle on the left side */
+  z-index: -1;
+  margin-right: -100px;
+}
+  

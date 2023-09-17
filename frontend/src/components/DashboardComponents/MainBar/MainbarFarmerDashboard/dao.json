@@ -1,0 +1,58 @@
+[ 
+    {
+        "name": "Safari DAO - Kenya",
+        "summary": "Vegetables growing",
+        "image": "./daoimage.jpeg",
+        "totalfunds": 100.34,
+        "approved": true
+    }, 
+    {
+        "name": "Mugosa DAO - Uganda",
+        "summary": "Banana growing",
+        "image": "./mugosa.jpeg",
+        "totalfunds": 2987.3,
+        "approved": false
+    },
+    {
+        "name": "Sagini DAO - Kenya",
+        "summary": "Tea and poultry farming",
+        "image": "./tea.jpeg",
+        "totalfunds": 345.3,
+        "approved": false
+    }, 
+    {
+        "name": "Dalari DAO - Egypt",
+        "summary": "Coffee berry farming",
+        "image": "./maskiedao.webp",
+        "totalfunds": 34.3,
+        "approved": false
+    }, 
+    {
+        "name": "Masike DAO - Tanzania",
+        "summary": "Kale and Cabbage farming",
+        "image": "./maskiedao.webp",
+        "totalfunds": 300.0,
+        "approved": true
+    }, 
+    {
+        "name": "Wagina DAO - Rwanda",
+        "summary": "Tea and poultry farming",
+        "image": "./waginadao.webp",
+        "totalfunds": 45.3,
+        "approved": false
+    }, 
+    {
+        "name": "Masimbe DAO - Kenya",
+        "summary": "Banana and cattle farming",
+        "image": "./mugosa.jpeg",
+        "totalfunds": 200.3,
+        "approved": true
+    }, 
+    {
+        "name": "Maluga DAO - Kenya",
+        "summary": "Tomatoe farming",
+        "image": "./daoimage.jpeg",
+        "totalfunds": 3.3,
+        "approved": false
+    }
+]

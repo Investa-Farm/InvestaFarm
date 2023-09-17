@@ -1,0 +1,52 @@
+.balance-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 30px;
+    box-shadow: 6px 0px 24px -10px rgba(0,0,0,0.75);
+    border-radius: 10px;
+}
+
+.balance-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 150px;
+    /* border-radius: 50%; */
+    padding: 10px;
+    /* background-image: url('./audio-waves.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; */
+}
+
+.balance-container img {
+    margin-bottom: 70px;
+    width: 60px;
+    height: 70px;
+}
+
+.balance-text {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #5b5a5a;
+}
+
+.balance-subtext {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 30px;
+    border: solid 1px #000;
+    color: #000;
+    cursor: pointer;
+}

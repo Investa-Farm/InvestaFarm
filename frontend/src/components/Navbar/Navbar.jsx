@@ -1,54 +1,72 @@
-import './Navbar.css'
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import './Navbar.css'; // Assuming you have a separate CSS file called Navbar.css for styling
 
-function Navbar({ openModal, account, walletConnected, setWalletConnected, setAccount  }) {
+const Navbar = ({ ConnectWallet, walletConnected, setWalletConnected, setAddress, address }) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  // Disconnect connected wallet 
-  const handleDisconnect = () => {
-    try {
-      setWalletConnected(false); 
-      setAccount(""); 
-      console.log("Account disconnected!"); 
-    } catch (error){
-      console.error(error)
-    }
+  const handleWalletConnect = async () => {
+    console.log("Connecting wallet....");
+    const account = await ConnectWallet();
+    console.log("Connected account is: ", account);
+    setWalletConnected(true);
+    setAddress(account);
   }
 
   useEffect(() => {
-    // Console log the account connected
-    console.log("Account is: ", account); 
-  })
+    window.ethereum.on('accountsChanged', function () {
+      window.location.reload();
+    })
+  }, [])
 
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  }
 
   return (
-      <div className="navbar">
-        <div className="logo">
-          <p>DappStarterKit</p>
+    <nav>
+      <div className="navbar-list">
+
+        <div className="navbar-logo">
+          <img className="navbar-logo" src="./networking.png" alt="Logo" />
+          <h1>Investa Farm</h1>
         </div>
 
-        {
-          !walletConnected && (
-            <button className="connect-button" onClick={openModal} >Connect Wallet</button>
-          )
-        }
+        <div className={`navbar-items ${isDropdownOpen ? 'show-dropdown' : ''}`}>
+          <li className="navbar-item">
+            <a className="navbar-link" href="/home">Home</a>
+          </li>
+          <li className="navbar-item">
+            <a className="navbar-link" href="/partners">Partners</a>
+          </li>
+          <li className="navbar-item">
+            <a className="navbar-link" href="/about">About</a>
+          </li>
+          <li className="navbar-item">
+            <a className="navbar-link" href="/marketplace">Marketplace</a>
+          </li>
+          <li className="navbar-item">
+            <a className="navbar-link" href="/team">Team</a>
+          </li>
+          <li className="navbar-item">
+            {
+              !walletConnected ? (
+                <button className="connect-wallet-button" onClick={handleWalletConnect}>Connect Wallet</button>
+              ) : (
+                <button className="connect-wallet-button">{address.slice(0, 6)}...{address.slice(38, 42)}</button>
+              )
+            }
+          </li>
+        </div>
 
-        {
-          walletConnected && (
-            <div>
-              {
-                account && (
-                  <button className='connect-button'>
-                    { account.slice(0,6) + "..." + account.slice(38,42) }
-                  </button>
-                )
-              }
-              <button className='connect-button' onClick={handleDisconnect}>Disconnect Wallet</button>
-            </div>
-          )
-        }
-        
+        <div className={`dropdown-menu-icon ${isDropdownOpen ? 'open' : ''}`} onClick={toggleDropdown}>
+          <div className={`bar bar1 ${isDropdownOpen ? 'rotate1' : ''}`}></div>
+          <div className={`bar bar2 ${isDropdownOpen ? 'hide' : ''}`}></div>
+          <div className={`bar bar3 ${isDropdownOpen ? 'rotate2' : ''}`}></div>
+        </div>
+
       </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;
