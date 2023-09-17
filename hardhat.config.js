@@ -1,15 +1,22 @@
-require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config(); 
+/**
+* @type import('hardhat/config').HardhatUserConfig
+*/
 
-/** @type import('hardhat/config').HardhatUserConfig */
+require('dotenv').config();
+require("@nomiclabs/hardhat-ethers");
+require("@nomiclabs/hardhat-waffle");
+
+const { ALCHEMY_API_KEY, PRIVATE_KEY } = process.env;
+
 module.exports = {
-  solidity: "0.8.18",
-  defaultNetwork: "polygon_mumbai",
+  solidity: "0.8.19",
+  defaultNetwork: "sepolia",
   networks: {
-    hardhat: {}, 
-    polygon_mumbai: {
-      url: process.env.ALCHEMY_API_KEY, 
-      accounts: [process.env.PRIVATE_KEY]
+    hardhat: {},
+    sepolia: {
+      url: ALCHEMY_API_KEY,
+      accounts: [PRIVATE_KEY]
     }
-  }
-};
+  },
+}
+

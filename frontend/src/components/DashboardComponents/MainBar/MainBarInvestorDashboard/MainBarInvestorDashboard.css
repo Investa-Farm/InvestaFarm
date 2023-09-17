@@ -1,0 +1,24 @@
+.mainbar_investor_dashboard-container {
+
+}
+
+.mainbar_investor_dashboard-div1 {
+
+}
+
+.mainbar_investor_dashboard-div2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.mainbar_investor_dashboard-div2 p{
+    font-weight: bold;
+    color: #92eb4e;
+}
+
+.mainbar_investor_dashboard div {
+    
+}

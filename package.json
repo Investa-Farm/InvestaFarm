@@ -5,11 +5,12 @@
     "hardhat": "^2.14.0"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
     "dotenv": "^16.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deployTestnet": "npx hardhat run scripts/deploy.js --network polygon_mumbai",
+    "deploy": "npx hardhat run scripts/deploy.js --network sepolia",
     "deployLocal": "npx hardhat run scripts/deploy.js --network localhost",
     "runTest": "npx hardhat run test/DecentDisc.js"
   }

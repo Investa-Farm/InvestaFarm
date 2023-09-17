@@ -1,0 +1,120 @@
+.navsection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50px;
+  height: 100vh;
+  /* background-color: #f7f7f7; */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+
+/* .content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+} */
+content {
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.first-menu {
+    margin-bottom: 3rem;
+}
+
+.profile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+menu a {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0.3rem;
+    cursor: pointer;
+}
+
+menu a:hover {
+    color: #000;
+    background-color: #b3e88a;
+}
+
+menu a img {
+    margin: 20px;
+    width: 9%;
+}
+
+.show-more {
+    font-size: 1rem;
+    color: #827f7f;
+}
+
+.show-more img {
+    width: 5%;
+    font-size: 0.2rem;
+}
+
+.item {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.item:hover {
+    background-color: #eee;
+}
+     
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+   margin-bottom: 20px;
+} 
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 16px;
+    font-weight: normal;
+}

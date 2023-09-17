@@ -1,43 +1,218 @@
-.navbar {
+/* Navbar.css */
+
+nav {
+    /* background: rgb(180,255,174);
+    background: linear-gradient(90deg, rgba(180,255,174,1) 0%, rgba(213,255,222,1) 32%, rgba(180,255,174,1) 100%); */
+    padding: 10px;
+    /* position: fixed; */
+    width: 100%;
+  }
+  
+  .navbar-list {
+    width: 100%;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    height: 60px;
-    padding: 0 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
-  
-  .logo {
+
+  .navbar-items {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    transition: transform 0.3s, opacity 0.3s;
   }
   
-  .logo img {
-    height: 30px;
-    margin-right: 10px;
-  }
-  
-  .logo p {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .connect-button {
-    background-color: #fff;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+  .navbar-item {
     margin: 10px;
   }
   
-  .connect-button:hover {
-    background-color: #5e5d5d;
-    color: #fff;
+  .navbar-logo {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
   }
+
+  .navbar-logo h1 {
+    font-size: 1rem;
+    margin: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .connect-wallet-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+/* Show the navbar items when the dropdown is open */
+.navbar-items.show-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: green;
+  position: absolute;
+  top: 60px; /* Adjust as needed to place the dropdown below the navbar */
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  transform: translateY(-10px); 
+  transition: transform 0.3s, opacity 0.3s;
+  margin-left: -10px;
+}
+
+.navbar-items.show-dropdown .navbar-item {
+  margin: 20px; /* Reset margin for better spacing in the dropdown */
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.navbar-items.show-dropdown .connect-wallet-button {
+  margin-top: 10px; /* Add margin to the button in the dropdown */
+}
+
+/* Add styles for the dropdown menu icon */
+.dropdown-menu-icon {
+  display: none; /* Hide the icon by default for larger screens */
+}
+
+/* Show the icon when the dropdown is open */
+.dropdown-menu-icon.open {
+  display: block;
+  /* Your existing styles for the hamburger icon... */
+}
+
+/* Add hamburger icon styling (you can use any icon library or custom styles) */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 6px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.bar.rotate1 {
+  transform: rotate(45deg) translate(8px, 5px);
+}
+
+.bar.rotate2 {
+  transform: rotate(-45deg) translate(7.5px, -5px);
+}
+
+/* Hide the middle bar when the dropdown is open */
+.bar.hide {
+  opacity: 0;
+}
+
+/* Media query to show/hide elements based on screen size */
+@media screen and (max-width: 768px) {
+  .navbar-items {
+    /* Hide the navbar items on tablet and below */
+    display: none;
+  }
+
+  .dropdown-menu-icon {
+    /* Show the hamburger icon on tablet and below */
+    display: block;
+  }
+
+  .navbar-list {
+    /* Add relative positioning to the navbar list to keep the dropdown in place */
+    position: relative;
+  }
+}
+   
+/* Media queries for different screen sizes */
+
+/* Desktop (1280px - 1024px) */
+@media only screen and (max-width: 1280px) {
+  .navbar-logo h1 {
+    font-size: 0.9rem; /* Decrease font size for better fit */
+  }
+
+  /* Add any other styles you want to adjust for desktop here... */
+}
+
+/* Tablet Landscape (1024px - 768px) */
+@media only screen and (max-width: 1024px) {
+  .navbar-list {
+    height: 50px; /* Decrease height for better fit on tablets */
+  }
+
+  .navbar-logo h1 {
+    font-size: 0.8rem; /* Decrease font size further for better fit */
+  }
+
+  /* Add any other styles you want to adjust for tablet landscape here... */
+}
+
+/* Tablet (768px - 480px) */
+@media only screen and (max-width: 768px) {
+  .navbar-items {
+    display: none;
+  }
+  
+  .navbar-list {
+    flex-direction: row;
+    padding: 0 35px; /* Stack items vertically for better fit on tablets */
+    height: auto; /* Adjust height to accommodate stacked items */
+  }
+
+  .navbar-item {
+    margin: 5px; /* Reduce item margin for better spacing */
+  }
+
+  .navbar-logo {
+    justify-content: center; /* Center logo and text on tablets */
+  }
+
+  .navbar-link {
+    font-size: 0.9rem; /* Slightly increase font size for better readability */
+  }
+
+  .connect-wallet-button {
+    padding: 6px 12px; /* Reduce button padding for better fit */
+  }
+
+  /* Add any other styles you want to adjust for tablets here... */
+}
+
+/* Phone Landscape & Smaller (480px and below) */
+@media only screen and (max-width: 480px) {
+  .navbar-list {
+    /* Add any specific styles you want for the navbar on smaller screens... */
+  }
+
+  .navbar-logo h1 {
+    font-size: 0.7rem; /* Further decrease font size for small screens */
+  }
+
+  .navbar-item {
+    margin: 3px; /* Reduce item margin further for better spacing */
+  }
+
+  .navbar-link {
+    font-size: 0.8rem; /* Slightly increase font size for better readability */
+  }
+
+  .connect-wallet-button {
+    padding: 4px 8px; /* Reduce button padding further for better fit */
+  }
+
+  /* Add any other styles you want to adjust for phone landscape and smaller here... */
+}
   

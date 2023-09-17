@@ -8,18 +8,18 @@ const main = async () => {
   console.log("Deploying contract with the account: ", deployer.address);
   
   // Get contract factory and deploy the contract
-  const contractFactory = await ethers.getContractFactory("SimpleStorage"); 
-  const simpleStorage = await contractFactory.deploy(); 
-  await simpleStorage.deployed(); 
+  const contractFactory = await ethers.getContractFactory("FarmDAO"); 
+  const farmDAO = await contractFactory.deploy("Farm DAO"); 
+  await farmDAO.deployed(); 
 
-  console.log("SimpleStorage contract address: ", simpleStorage.address); 
+  console.log("Farm DAO contract address: ", farmDAO.address); 
 
   // Save the contract's artifacts and address in the frontend directory
-  saveFrontendFiles(simpleStorage); 
+  saveFrontendFiles(farmDAO); 
 
 }
 
-const saveFrontendFiles = (simpleStorage) => {
+const saveFrontendFiles = (farmDAO) => {
   const fs = require("fs"); 
   const contractsDir = __dirname + "/../frontend/src/contracts"; 
 
@@ -29,14 +29,14 @@ const saveFrontendFiles = (simpleStorage) => {
 
   fs.writeFileSync(
     contractsDir + '/contracts-address.json', 
-    JSON.stringify({ SimpleStorage: simpleStorage.address }, undefined, 2)
+    JSON.stringify({ farmDAO: farmDAO.address }, undefined, 2)
   ); 
 
-  const SimpleStorageArtifact = hre.artifacts.readArtifactSync("SimpleStorage"); 
+  const FarmDAOArtifact = hre.artifacts.readArtifactSync("FarmDAO"); 
 
   fs.writeFileSync(
-    contractsDir + '/SimpleStorage.json', 
-    JSON.stringify(SimpleStorageArtifact, null, 2)
+    contractsDir + '/farmDAO.json', 
+    JSON.stringify(FarmDAOArtifact, null, 2)
   ); 
 
 }
