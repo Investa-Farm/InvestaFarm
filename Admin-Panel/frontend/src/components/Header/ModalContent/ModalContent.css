@@ -1,0 +1,111 @@
+/* Position the modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  /* Style the modal content */
+  .modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 70vw;
+    height: 80vh;
+  }
+  
+  /* Style the close button */
+  .close-btn {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Style the close button on hover */
+  .close-btn:hover {
+    background-color: #0062cc;
+  }
+  
+  /* Modal title */
+  .modal-title {
+    text-align: center;
+    margin-left: 100px;
+    margin-bottom: 30px;
+  }
+  /* Style the content container */
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Style the input elements */
+  .content-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .content-container div label {
+    width: 30%;
+    text-align: right;
+    margin-right: 1rem;
+  }
+  
+  .content-container div input {
+    width: 40vw;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Style the modal close icon */
+  .modal-close {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  /* DAO styles */
+  .content-container {
+    height: 70vh;
+  }
+  
+  .dao-details, .reports-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .descriptionArea {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .close-btn {
+    margin: 20px;
+  }
+  
+  .invest-input {
+    width: 30vw;
+  }
