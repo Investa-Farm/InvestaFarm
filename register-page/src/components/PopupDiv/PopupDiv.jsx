@@ -9,7 +9,7 @@ const PopupDiv = ({ showPopup, error, success}) => {
                   { 
                     !error && (
                         <div className='success'>
-                          <p>Success<br/>You can now <button href='https://investafarm-marketplace-eth.vercel.app/'>Login</button> </p>
+                          <p>Success<br/> <br/> You can now <a href='https://investafarm-marketplace-eth.vercel.app/'>Login</a> </p>
                         </div>
                     ) 
                   }

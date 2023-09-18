@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './RegisterComponent.css'; 
 import PopupModal from '../PopupModal/PopupModal';
 // import connectWallet from '../Connectwallet/ConnectWallet';
-import connectWallet from './ConnectWallet/ConnectWallet';
+// import connectWallet from '../../../../frontend/src/components/ConnectWallet/ConnectWallet';
+import connectWallet from './ConnectWallet/ConnectWallet'; 
 import getProviderOrSigner from '../../contractInstance';
 import LoadingModal from '../Loading/Loading';
 import PopupDiv from '../PopupDiv/PopupDiv';
 import DAO from '../DAO/DAO';
+import { ethers } from 'ethers';
 
 const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddress }) => {
   const [showModal, setShowModal] = useState(false);
@@ -27,6 +29,8 @@ const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddr
   let description; 
   let farmReports; 
   let financialReports; 
+  let farmerName1; 
+  let farmerName2; 
 
   // For register investor
   let investorName; 
@@ -123,6 +127,8 @@ const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddr
       const tx = await farmDaoContract.createDao(
         walletAddress1, 
         walletAddress2, 
+        farmerName1, 
+        farmerName2, 
         description, 
         farmReports,
         financialReports, 
@@ -141,7 +147,7 @@ const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddr
       setTimeout(() => {
         setShowPopup(false)
         setSuccess(false)
-      }, 3000); 
+      }, 10000); 
 
       getRegisteredDAOs(); 
 
@@ -169,10 +175,10 @@ const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddr
       setModalContent(
         <div className='content-container'>
           <div>
-            <label>Name</label>
+            <label>Farm Name</label>
             <input 
               type="text" 
-              placeholder="Name" 
+              placeholder="Farm Name" 
               name="Name"
               onChange={ (e) => {
                 daoName = e.target.value
@@ -198,6 +204,28 @@ const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddr
               name='walletAddress2'
               onChange={ (e) => {
                 walletAddress2 = e.target.value
+              }}
+            />
+          </div>
+          <div>
+            <label>Farmer Name 1</label>
+            <input 
+              type="text" 
+              placeholder="Farmer Name 1" 
+              name='farmerName1'
+              onChange={ (e) => {
+                farmerName1 = e.target.value
+              }}
+            />
+          </div>
+          <div>
+            <label>Farmer Name 2</label>
+            <input 
+              type="text" 
+              placeholder="Farmer Name 2" 
+              name='farmerName2'
+              onChange={ (e) => {
+                farmerName2 = e.target.value
               }}
             />
           </div>
@@ -307,7 +335,7 @@ const RegisterComponent = ({ registeredDAOs, setRegisteredDAOs, address, setAddr
               <button className="register-button" onClick={() => { handleShowModal("REGISTERFARMER", "This is the Register Modal Content"); connectWallet() }}>Register as a farmer</button>
               <button className="register-button" onClick={() => { handleShowModal("REGISTERINVESTOR", "This is the Register Modal Content"); connectWallet() }}>Register as an Investor</button>
               {/* <button onClick={() => { handleLogin(); connectWallet() }}>Login DAO</button> */}
-              <p className='dao-register'>Already registered? <a href='https://investafarm-marketplace-eth.vercel.app/'>Login</a></p>
+              <p className='dao-register'>Already registered? <a href='http://localhost:5174/'>Login</a></p>
             </div>
           </div>
 
