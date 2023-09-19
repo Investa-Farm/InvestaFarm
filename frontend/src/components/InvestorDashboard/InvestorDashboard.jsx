@@ -5,7 +5,19 @@ import MainBar from '../DashboardComponents/MainBar/MainBar'
 import MainInvestorDashboard from '../DashboardComponents/MainBar/MainInvestorDashboard/MainInvestorDashboard'
 // import MainBarInvestorDashboard from '../DashboardComponents/MainBar/MainBarInvestorDashboard'
 
-const InvestorDashboard = ({ isInvestor, loggedInInvestorDetails, walletBalance, registeredDAOs, setRegisteredDAOs, setInvestorDashboard, investorDashboard }) => {
+const InvestorDashboard = ({ 
+  isInvestor, 
+  loggedInInvestorDetails, 
+  walletBalance, 
+  registeredDAOs,
+  setRegisteredDAOs, 
+  setInvestorDashboard, 
+  investorDashboard,  
+  totalInvestmentByInvestor, 
+  totalDAOsInvestedByInvestor, 
+  setTotalInvestmentByInvestor, 
+  setTotalDAOsInvestedByInvestor
+ }) => {
   return (
     <div className='investordashboard-container'>
         <Sidebar 
@@ -30,6 +42,8 @@ const InvestorDashboard = ({ isInvestor, loggedInInvestorDetails, walletBalance,
               loggedInInvestorDetails={loggedInInvestorDetails}
               registeredDAOs={registeredDAOs}
               setRegisteredDAOs={setRegisteredDAOs}
+              totalInvestmentByInvestor={totalInvestmentByInvestor}
+              totalDAOsInvestedByInvestor={totalDAOsInvestedByInvestor}
             />
           )
         }

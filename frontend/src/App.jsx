@@ -1,35 +1,13 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-// import partciles from 'particles.js'; // WORK ON THIS IMPORTS
-import DaoDashboard from './components/DaoDashboard/DaoDashboard'
-// import ConnectWallet from './components/ConnectWallet/ConnectWallet'
-import DaoMarketplace from './components/DaoMarketplace/DaoMarketplace'
-import { 
-  BrowserRouter as Router,  
-  Route,
-  Routes,
-  // Redirect
- } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar'
 import connectWallet from './components/ConnectWallet/ConnectWallet'
-import TrapezoidalDiv from './components/TrapezoidalDiv/TrapezoidalDiv'
-import HowRegistraionWorks from './components/HowRegistrationWorks/HowRegistraionWorks'
 import InvestorDashboard from './components/InvestorDashboard/InvestorDashboard'
 import FarmerDashboard from './components/FarmerDashboard/FarmerDashboard'
-
-// NEW IMPORTS 
 import getProviderOrSigner from './contractInstance'
 import PopupDiv from './components/PopupDiv/PopupDiv'
 import { ethers } from 'ethers'
 
-import { BigNumber } from 'ethers';
-
 function App() {
-  const [address, setAddress] = useState(); 
-  const [walletConnected, setWalletConnected] = useState(); 
-
   // New state variables 
   const [registeredDAOs, setRegisteredDAOs] = useState([]); 
   const [isFarmer, setIsFarmer] = useState(false); 
@@ -37,11 +15,12 @@ function App() {
   const [addressRegistered, setAddressRegistered] = useState(true); 
   const [loggedInFarmerDetails, setLoggedInFarmerDetails] = useState(null); 
   const [loggedInInvestorDetails, setLoggedInInvesorDetails] = useState(null); 
-  const [daosRegistered, setDaosRegistered] = useState(null); 
   const [amountInvestedInDao, setAmountInvestedInDao] = useState(); 
   const [loading, setLoading] = useState(false); 
   const [walletBalance, setWalletBalance] = useState(null);
   const [investorDashboard, setInvestorDashboard] = useState(false); 
+  const [totalInvestmentByInvestor, setTotalInvestmentByInvestor] = useState(0); 
+  const [totalDAOsInvestedByInvestor, setTotalDAOsInvestedByInvestor] = useState(0); 
 
   const getRegisteredFarmers = async () => {
     let isFarmerRegistered; 
@@ -54,20 +33,9 @@ function App() {
     await connectWallet();
     const { farmDaoContract } = await getProviderOrSigner(false);
 
-    // console.log("Fetching DAO details...");
-
     // Call the getAllDaos function from the smart contract
     const registeredDAOs = await farmDaoContract.getAllDaos();
     setRegisteredDAOs(registeredDAOs); 
-
-    // console.log("Registered DAOs:", registeredDAOs);
-    // console.log("Account is: ", account);
-
-    // Check if the connected account matches any of the farmer addresses in registeredDAOs
-    // const isAccountRegistered = registeredDAOs.some((dao) =>
-    //     dao.address1.toLowerCase() === account.toLowerCase() ||
-    //     dao.address2.toLowerCase() === account.toLowerCase()
-    // );
 
     // Check if the connected account matches any of the farmer addresses in registeredDAOs
     const matchingDAO = registeredDAOs.find((dao) =>
@@ -81,12 +49,9 @@ function App() {
         isFarmerRegistered = true; 
         registeredDAOId = matchingDAO.id;
         const registeredDAOIdAsNumber = registeredDAOId.toNumber();
-        // console.log('Registered DAO id is: ', registeredDAOIdAsNumber); 
         setAddressRegistered(false); 
         getRegisteredDAOs(registeredDAOIdAsNumber);
         return true; 
-        // setIsFarmer(true); 
-        // setIsInvestor(false); 
     } else {
         isFarmerRegistered = false ; 
         window.alert("You are not registered!");
@@ -103,12 +68,11 @@ function App() {
 
     try {
       const allDAOs = await farmDaoContract.getAllDaos(); 
-      // console.log("All DAOs are: ", allDAOs); 
       setRegisteredDAOs(allDAOs); 
+      const dao = await checkInvestmentsInDAOs(allDAOs);
+      console.log("Connected account has invested in: ", dao); 
       const amountInvested = await farmDaoContract.getCurrentAmountAvailable(daoId); 
       setAmountInvestedInDao(amountInvested); 
-      // console.log("Amount invested: ", amountInvested); 
-      // console.log("All DAOs are: ", allDAOs[0].id); 
       const filteredDAO = allDAOs.find((dao) => dao.id.toNumber() === daoId);
       console.log("DAO created by connected wallet:", filteredDAO);
       setLoggedInFarmerDetails(filteredDAO); 
@@ -117,6 +81,27 @@ function App() {
       console.error(error)
     }
 
+  }
+
+  const checkInvestmentsInDAOs = async (allDAOs) => {
+    console.log("Checking..."); 
+    try {
+      const { ethereum } = window;
+      const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+      const account = accounts[0];
+      
+      console.log("Checking investments in DAOs for account: ", account);
+      for (const dao of allDAOs) {
+        const isInvestorInDAO = dao.investors.some((investor) => investor.toLowerCase() === account.toLowerCase());
+        if (isInvestorInDAO) {
+            console.log("Connected account has invested in DAO:", dao);
+            return dao; 
+        }
+      }
+
+    } catch (error) {
+      console.error(error); 
+    }
   }
 
   const getRegisteredInvestors = async () => {
@@ -129,15 +114,15 @@ function App() {
     await connectWallet();
     const { farmDaoContract } = await getProviderOrSigner(false);
     
-    // console.log("Fetching investor details...")
     // Call the getAllInvestorInfo function from the smart contract
     const investorInfoList = await farmDaoContract.getAllInvestorInfo();
     const totalInvestment = await farmDaoContract.getTotalInvestmentByInvestor(account);
+    setTotalInvestmentByInvestor(totalInvestment); 
     const totalNumberOfDaos = await farmDaoContract.getTotalNumberOfDaosByInvestor(account);
+    setTotalDAOsInvestedByInvestor(totalNumberOfDaos); 
 
     const connectedAccountMatches = investorInfoList.some((info) => info.investorAddress.toLowerCase() === account.toLowerCase());
-
-    // console.log("Account is: ", account); 
+    console.log("Connected account matches ", connectedAccountMatches); 
 
     if (connectedAccountMatches) {
       const connectedAccountInfo = investorInfoList.find((info) => info.investorAddress.toLowerCase() === account.toLowerCase());
@@ -152,11 +137,6 @@ function App() {
         setAddressRegistered(false); 
       }
       return true; 
-
-      // console.log("Is investor registered: ", isAccountRegistered); 
-      // isInvestorRegistered = true; 
-      // setIsInvestor(true); 
-      // setIsFarmer(false); 
     }
 
     // return isInvestorRegistered; 
@@ -214,34 +194,8 @@ function App() {
   
   return (
     <div className="App">
-            {/* The components commented out will be removed eventually */}
-            
-            <div className="trapezoid-background">
-              {/* <TrapezoidalDiv /> */}
-            </div>
 
             <div className="content-wrapper">
-              {/* <Navbar
-                ConnectWallet={connectWallet}
-                walletConnected={walletConnected}
-                setWalletConnected={setWalletConnected}
-                setAddress={setAddress}
-                address={address}
-              />
-
-              <DaoDashboard
-                registeredDAOs={registeredDAOs}
-                setRegisteredDAOs={setRegisteredDAOs}
-                address={address}
-                setAddress={setAddress}
-              />
-              
-              <HowRegistraionWorks />
-
-              <DaoMarketplace
-                registeredDAOs={registeredDAOs}
-                setRegisteredDAOs={setRegisteredDAOs}
-              /> */}
               
               { 
                 addressRegistered && (
@@ -275,6 +229,10 @@ function App() {
                    setRegisteredDAOs={setRegisteredDAOs}
                    investorDashboard={investorDashboard}
                    setInvestorDashboard={setInvestorDashboard}
+                   totalInvestmentByInvestor={totalInvestmentByInvestor}
+                   totalDAOsInvestedByInvestor={totalDAOsInvestedByInvestor} 
+                   setTotalInvestmentByInvestor={setTotalDAOsInvestedByInvestor} 
+                   setTotalDAOsInvestedByInvestor={setTotalDAOsInvestedByInvestor}
                 />
               )}
             </div>

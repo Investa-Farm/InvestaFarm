@@ -130,7 +130,7 @@ const DAO = ({ daoContent, setShowDao, setRegisteredDAOs }) => {
 
                 <div className="invested-form">
                     <p className='descriptionArea' >Total Amount Invested</p>
-                    <p className='descriptionArea' >{ convertedAmounts } USD</p>
+                    <p className='descriptionArea' >{ convertedAmounts.toFixed(2) } USD</p>
                 </div>
 
                 <div className='reports'>

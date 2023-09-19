@@ -1,10 +1,10 @@
 import React from 'react'
 import './MainInvestorDashboard.css'
 import InvestorDashboardTop from './InvestorDashboardTop/InvestorDashboardTop'
-import InvestorDashboardBottom from './InvestorDashboardRight/InvestorDashboardBottom'
+import InvestorDashboardBottom from './InvestorDashboardBottom/InvestorDashboardBottom'
 import TopSection from '../TopSection/TopSection'
 
-const MainInvestorDashboard = ({ loggedInInvestorDetails, registeredDAOs, setRegisteredDAOs }) => {
+const MainInvestorDashboard = ({ loggedInInvestorDetails, registeredDAOs, setRegisteredDAOs, totalInvestmentByInvestor, totalDAOsInvestedByInvestor }) => {
   return (
     <div className='maininvestordashboard-container'>
        <TopSection 
@@ -13,6 +13,8 @@ const MainInvestorDashboard = ({ loggedInInvestorDetails, registeredDAOs, setReg
        <div className='investordashboard-main-container'>
           <InvestorDashboardTop
             loggedInInvestorDetails={loggedInInvestorDetails}
+            totalDAOsInvestedByInvestor={totalDAOsInvestedByInvestor} 
+             totalInvestmentByInvestor={totalInvestmentByInvestor}
           />
           <InvestorDashboardBottom 
              registeredDAOs={registeredDAOs}
