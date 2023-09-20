@@ -6,8 +6,25 @@ This is the site demo:
 Video 1: Landing page overview and registering as an investor
 https://www.loom.com/share/a36b966b96244bb990b77f30fa329561?sid=3d4f8e97-9311-4bb9-87d0-6d20e2333c20 
 
-Video 2: Registering as a Farmer 
+Video 2: Part 2 of video 1 explaining admin panel approval and registering as a farmer
 https://www.loom.com/share/89a8d44f9c7e4921ad8d75e8b2955189?sid=51a0c57e-1bae-4b5c-a806-ae4ab5b4c2d8 
+
+# Project Overview and description 
+Project Description: Investa Farm is a decentralized autonomous organization (DAO) that offers loans and investment opportunities to farmers in East Africa and Africa. The goal of the project is to provide financial support to farmers, particularly those in underserved regions, to improve their livelihoods and agricultural productivity.
+
+To achieve this goal, the project has integrated several blockchain technologies, including a specific deployment on Base Network, DAO management, and approval using Aragon. In addition, the project has implemented meta-snaps to track its progress and ensure transparency in its operations.
+
+Technologies:
+
+* Meta Snaps: Meta Snaps is a feature of the Snapshot platform that allows DAOs to track their progress and ensure transparency in their operations. Meta Snaps uses blockchain technology to create immutable records of DAO decisions and voting results, providing a permanent record of the organization's activities. The integration of Meta Snaps in the Polygon Circular Community allows for a more transparent and accountable decision-making process.
+
+* Aragon: Aragon allows us to create the DAOs and manage the DAOs through the admin panel which is responsible for verification of the DAOs once they have been created. This prevents bad players who want to extort the investors from being flushed out by only allowing DAOs that have been approved to receive investments. 
+
+* Base Network Deploy: In order to allow cross-chain compatibility, we have a specific site that has been deployed on the base network. This is crucial for cross-chain compatibility to ensure the site is available to everyone for use.  
+
+In summary, Investa Farm is a DAO that provides financial support to farmers in East Africa and Africa. The project has been built by a number of technologies such as Aragon and deployed on different chains i.e. Seploia and Base. It also enables Meta Swaps with all available inputs s to ensure transparency in the project's operations. These blockchain technologies improve the efficiency, flexibility, and transparency of the project, making it a powerful tool for supporting farmers in underserved regions.
+
+
 
 
 
