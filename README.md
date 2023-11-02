@@ -20,7 +20,7 @@ Technologies:
 
 * Aragon: Aragon allows us to create the DAOs and manage the DAOs through the admin panel which is responsible for verification of the DAOs once they have been created. This prevents bad players who want to extort the investors from being flushed out by only allowing DAOs that have been approved to receive investments. 
 
-* Mumbai Deploy: In order to allow cross-chain compatibility, we have a specific site that has been deployed on the base network. This is crucial for cross-chain compatibility to ensure the site is available to everyone for use.  
+* Mumbai Deploy: In order to allow cross-chain compatibility, we have a specific site that has been deployed on the mumbai network. This is crucial for cross-chain compatibility to ensure the site is available to everyone for use.  
 
 In summary, Investa Farm is a DAO that provides financial support to farmers in East Africa and Africa. The project has been built by a number of technologies such as Aragon and deployed on different chains i.e. Seploia and Base. It also enables Meta Swaps with all available inputs s to ensure transparency in the project's operations. These blockchain technologies improve the efficiency, flexibility, and transparency of the project, making it a powerful tool for supporting farmers in underserved regions.
 
