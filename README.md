@@ -1,6 +1,6 @@
 # Investa Farm ETH Safari Hackathon
 
-Main site can be found at: https://investafarm-eth.vercel.app/ 
+Main site can be found at: https://investafarm.com/ 
 
 This is the site demo: 
 Video 1: Landing page overview and registering as an investor
