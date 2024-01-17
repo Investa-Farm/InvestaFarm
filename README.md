@@ -1,4 +1,4 @@
-# Investa Farm ETH Safari Hackathon
+# Investa Farm Project Description
 
 Main site can be found at: https://investafarm.com/ 
 
