@@ -2,33 +2,55 @@
 
 Main site can be found at: https://investafarm.com/ 
 
-This is the site demo: 
-Video 1: Landing page overview and registering as an investor
-https://www.loom.com/share/a36b966b96244bb990b77f30fa329561?sid=3d4f8e97-9311-4bb9-87d0-6d20e2333c20 
+Demos
 
-Video 2: Part 2 of video 1 explaining admin panel approval and farmer navigation through the dashboard
-https://www.loom.com/share/93bd65be469b4355b78cce10a4d6bbc7?sid=33439afb-81a5-4f63-abbb-dc31a8a1a39e
+Video 1: How an investor invests in a farm and summary of an investor walkthrough
+https://www.loom.com/share/41122e8e622d409fb33f9f9d0b22aaf9?sid=1eabc673-0a17-447b-9041-a0a336385cef 
 
-Video 3: Registering using google sign in and sending funds via Mpesa 
-https://www.loom.com/share/9471495354b64ebcbe4e743d94fcd33b?sid=cb394402-458f-498e-8646-f88e31cec6c3 
-
-Video 4: Registering as a farmer using google sign in
-https://www.loom.com/share/7ac873cc426d4096bd682a6d65038cf7?sid=8a885e4d-10d8-4ad9-bdcb-2947c2c07a53 
+Video 2: Farmer Walkthrough and how they do their credit scoring on the platform
+https://www.loom.com/share/fd15b17951f04735a12c55f145e9da4e?sid=b46f98fa-cc45-4186-8f02-6f2869ef376a  
 
 # Project Overview and description 
-Project Description: Investa Farm is a decentralized autonomous organization (DAO) that offers loans and investment opportunities to farmers in East Africa and Africa. The goal of the project is to provide financial support to farmers, particularly those in underserved regions, to improve their livelihoods and agricultural productivity.
+Investa Farm is a decentralized autonomous organization (DAO) that offers loans and investment opportunities to farmers in East Africa and Africa. The goal of the project is to provide financial support to farmers, particularly those in underserved regions, to improve their livelihoods and agricultural productivity.
 
-To achieve this goal, the project has integrated several blockchain technologies, including a specific deployment on Base Network, DAO management, and approval using Aragon. In addition, the project has implemented meta-snaps to track its progress and ensure transparency in its operations.
+To achieve this goal, Investa Farm has integrated several blockchain technologies, including a specific deployment on the Internet Computer Protocol (ICP) for enhanced scalability and security. 
 
-Technologies:
+## Technologies
 
-* Meta Snaps: Meta Snaps is a feature of the Snapshot platform that allows DAOs to track their progress and ensure transparency in their operations. Meta Snaps uses blockchain technology to create immutable records of DAO decisions and voting results, providing a permanent record of the organization's activities. The integration of Meta Snaps in the Polygon Circular Community allows for a more transparent and accountable decision-making process.
+Investa Farm employs a range of blockchain technologies to facilitate its operations:
 
-* Aragon: Aragon allows us to create the DAOs and manage the DAOs through the admin panel which is responsible for verification of the DAOs once they have been created. This prevents bad players who want to extort the investors from being flushed out by only allowing DAOs that have been approved to receive investments. 
+**_Smart Contracts:_** Converted from Solidity to Rust canisters on ICP, managing the interactions among investors, farmers, agribusinesses, and supply agro stores.
 
-* Mumbai Deploy: In order to allow cross-chain compatibility, we have a specific site that has been deployed on the mumbai network. This is crucial for cross-chain compatibility to ensure the site is available to everyone for use.  
+**_On-Chain Frontend:_** The landing page is deployed as an ICP frontend canister, ensuring seamless user interaction.
 
-In summary, Investa Farm is a DAO that provides financial support to farmers in East Africa and Africa. The project has been built by a number of technologies such as Aragon and deployed on different chains i.e. Seploia and Base. It also enables Meta Swaps with all available inputs s to ensure transparency in the project's operations. These blockchain technologies improve the efficiency, flexibility, and transparency of the project, making it a powerful tool for supporting farmers in underserved regions.
+**_Payment Integration:_** Supports ckETH, ckUSDC, and ckUSDT for fully on-chain payment processing.
+
+**_Tokenization_:** The iFarm Token allows farmers to tokenize assets such as farmland, providing new avenues for financing.
+
+## Key Features
+**_Access to Finance:_** Farmers can obtain easy and quick loans through the platform, facilitating growth without financial barriers.
+
+**_Investment Opportunities:_** Investors can allocate stablecoins into agricultural projects, earning consistent returns while supporting sustainable farming practices.
+
+**_Yield Farming & Staking:_** Lenders can earn passive income through yield farming or by staking iFarm tokens to secure the network.
+
+## Loan Process
+- _Registration:_ Farmers register at their local agrostore with identification documents.
+- _Application Submission:_ They fill out a loan application form provided by the agrostore.
+- _Approval Timeline:_ Loan applications are processed within a maximum of two days.
+- _Disbursement Notification:_ Approved loans are communicated through the agrostore, detailing the loan amount.
+
+Investa Farm aims to create a supportive ecosystem for farmers while ensuring transparency and efficiency in its operations. Welcome to the Investa Farm family—get ready for exclusive rewards, loan updates, and more!
+
+## Company Structure:
+Investa Farm Limited is a Private Company Limited by shares according to the United Kingdom Company's Act 2006 and Kenya's Company Act 2015.
+
+## Locations:
+Investa Farm Ltd. - United Kingdom
+
+Investa Farm Ltd. - Kenya
+
+Copyright © [2024] Investa Farm.
 
 
 
